@@ -2,4 +2,9 @@ doctype html
 html
   = render 'layouts/head'
   body
-    = yield
+    = render 'shared/header'
+    .container-fluid
+      .row
+        = render 'shared/navbar'
+        main.col-md-9.ms-sm-auto.col-lg-10.px-md-4
+          = yield
