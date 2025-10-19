@@ -4,9 +4,9 @@ source 'https://rubygems.org'
 
 gem 'bootsnap', require: false
 gem 'dartsass-rails'
-gem 'rails', '~> 8.0.3'
 gem 'propshaft'
 gem 'puma'
+gem 'rails', '~> 8.0.3'
 gem 'slim'
 gem 'sqlite3'
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
@@ -16,10 +16,10 @@ gem 'turbo-rails'
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem 'stimulus-rails'
 
+gem 'kamal', require: false
 gem 'solid_cable'
 gem 'solid_cache'
 gem 'solid_queue'
-gem 'kamal', require: false
 
 # Add HTTP asset caching/compression and X-Sendfile acceleration to Puma [https://github.com/basecamp/thruster/]
 gem 'thruster', require: false
