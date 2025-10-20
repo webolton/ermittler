@@ -1,0 +1,10 @@
+.alert.alert-danger.alert-dismissible
+  h6.alert-heading
+    = t('errors.record.list',
+        error_pluralized: pluralize(record.errors.count, 'error'),
+        record_name: record.class.name.downcase)
+  ul.mb-0
+    - record.errors.map do |error|
+      li
+        = error.full_message
+  button.btn-close[type='button' data-bs-dismiss='alert' aria-label='Close']

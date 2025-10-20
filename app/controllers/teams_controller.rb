@@ -23,14 +23,15 @@ class TeamsController < ApplicationController
   def create
     @team = Team.new(team_params)
 
-    respond_to do |format|
-      if @team.save
-        format.html { redirect_to @team, notice: 'Team was successfully created.' }
-        format.json { render :show, status: :created, location: @team }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @team.errors, status: :unprocessable_entity }
-      end
+    if @team.save
+      # redirect_to root_path, notice: 'Team was successfully created.'
+      flash.now[:notice] = 'Team successfully created'
+      render turbo_stream: [
+        turbo_stream.update('new_team_modal', partial: 'new_team_frame'),
+        turbo_stream.update('notices', partial: 'shared/notices')
+    ]
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
