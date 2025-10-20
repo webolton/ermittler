@@ -1,0 +1,21 @@
+#team-modal-form.modal.fade[tabindex="-1" aria-labelledby="team-modal-label" aria-hidden="true"]
+  .modal-dialog
+    .modal-content
+      .modal-header
+        h1#team-modal-label.modal-title.fs-5
+          | New team
+        button.btn-close[type="button" data-bs-dismiss="modal" aria-label="Close"]
+      .modal-body
+        - if @team.errors.any?
+          = render 'shared/record_errors', record: @team
+        = form_with model: team, local: true do |form|
+          .mb-3
+            = form.label :email, class: 'form-label'
+            = form.text_field :email, class: 'form-control'
+          .mb-3
+            = form.label :name, class: 'form-label'
+            = form.text_field :name, class: 'form-control'
+          .modal-footer
+            = form.submit 'Save', class: 'btn btn-primary'
+            button.btn.btn-secondary[type="button" data-bs-dismiss="modal"]
+              | Close

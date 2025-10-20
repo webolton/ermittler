@@ -1,0 +1,3 @@
+= turbo_frame_tag :new_team_modal do
+  div[data-controller='team-modal', data-action="turbo:submit-end->team-modal#submitEnd"]
+    = render 'form', team: @team
