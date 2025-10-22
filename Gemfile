@@ -6,7 +6,7 @@ gem 'bootsnap', require: false
 gem 'dartsass-rails'
 gem 'propshaft'
 gem 'puma'
-gem 'rails', '~> 8.0.3'
+gem 'rails', '~> 8.1.0'
 gem 'slim'
 gem 'sqlite3'
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
